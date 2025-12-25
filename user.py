@@ -6,7 +6,7 @@ add=FastAPI()
 
 class User(BaseModel):
     first_name : Annotated[str, Query(max_length=10)]
-    last_name: Annotated[str, Query(max_length=10)]
+    last    _name: Annotated[str, Query(max_length=10)]
     email : EmailStr
 
     @field_validator("email")
