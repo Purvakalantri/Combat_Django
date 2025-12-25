@@ -2,7 +2,7 @@ from typing import Annotated
 from fastapi import FastAPI, Query
 from pydantic import BaseModel, EmailStr, field_validator
 
-add=FastAPI()
+app=FastAPI()
 
 class User(BaseModel):
     first_name : Annotated[str, Query(max_length=10)]
@@ -20,7 +20,7 @@ class User(BaseModel):
 
 
 
-@add.post("/Create_User/")
+@app.post("/create_user/")
 def create_user(user: User):
     return {"message" : "User created", "user": user}
     
